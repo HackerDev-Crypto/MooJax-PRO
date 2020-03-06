@@ -1,0 +1,1173 @@
+// ==UserScript==
+// @name MooJax 2.4 || AutoHeal[X5]&Instakill! | !Discord! | Game Cursor! | Best HotKeys! |  ★
+// @version    2.4
+// @description MooJax Modify menu![❚Macro = Z-Tank Gear + Shadow Wings Space Bar-Blood Wings + Bull Helmet C-Medic Gear + Angel Wings M- Velocity Esc-Modify❚] [❚Featured Hacker❚] [❚Musket + Katana = *,* Katana & *.* Musket❚] [❚Instakill Key = R❚] [❚Bow+Rep.+Musk. Key = K ❚] [❚AutoHeal = More Fast❚] [❚Little more hard to get Clown❚] [❚InstaKill Pike = On/Off❚] [❚KeyCodes = V - Pike F - Pit N - Windmill❚] [❚KeyCodesCircle = L-Spike O-Pit P-Windmill J-Turret❚] [❚★Premium MAP★❚] [❚AutoChat & AutoClan❚] !Discord!
+// @match        *://moomoo.io/*
+// @match        *://sandbox.moomoo.io/*
+// @match        *dev.moomoo.io/*
+// @require https://greasyfork.org/scripts/368273-msgpack/code/msgpack.js?version=598723
+// @require http://code.jquery.com/jquery-3.3.1.min.js
+// @require https://code.jquery.com/ui/1.12.0/jquery-ui.min.js
+// @require https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js
+// @namespace -
+// ==/UserScript==
+
+//Start edit
+var fh = false
+$("#gameCanvas").css('cursor', 'url(http://cur.cursors-4u.net/user/use-1/use153.cur), default');
+$("#enterGame").css('cursor', 'url(http://cur.cursors-4u.net/user/use-1/use153.cur), default');
+document.getElementById("storeHolder").style = "height: 1500px; width: 450px;"
+$("followText").remove();
+document.getElementById('loadingText').innerHTML = 'Loading be peacefull';
+document.getElementById('gameName').innerHTML = '★MooJax★';
+document.getElementById("leaderboard").append('MooJax');;
+document.getElementById('errorNotification').remove();
+document.getElementById("pingDisplay").remove();
+$("#enterGame").click( () => {
+   if (fh == false) {
+    fh = true
+   } else {
+       fh = false
+   }
+})
+$("#consentBlock").css({display: "none"});
+setInterval(() => {
+if (fh == false) {
+    $("#youtuberOf").html (`<div id="youtuberOf">
+                           ´
+		<div class="spanLink" id="featuredYoutube"><a target="_blank" class="ytLink" href="https://www.youtube.com/channel/UCxNHxsTut7atZCUNSJCHx4A?sub_confirmation=1"><i class="material-icons" style="vertical-align: top;"></i>Her Io</a></div>
+	</div>
+Featured Hacker:`) // Her Io Pro
+} else {
+    $("#youtuberOf").html(`<div id="youtuberOf">
+                           ´
+		<div class="spanLink" id="featuredYoutube"><a target="_blank" class="ytLink" href="https://www.youtube.com/channel/UCrZVnif0yPniQfdwvdMgf_Q?sub_confirmation=1"><i class="material-icons" style="vertical-align: top;"></i> Jack LaL</a></div>
+	</div>
+Featured Hacker:`) // Jack LaL Pro
+}
+}, 10000);
+$("#menuCardHolder").append(`<div class='menuCard' id='guideCard'><div class='menuHeader'>MooJax Features & Settings<br></div><div class='menuText'> <br> Left Arrow Key --------> Hat(id): <input type="number" id="HAT1" /> <br> <br> Acc(id): <input type="number" id="ACC1" /> <br> <br> Right Arrow Key --------> Hat(id): <input type="number" id="HET1" /> <br> <br>  Acc(id): <input type="number" id="AEC1" /> <br> <br> Auto Feed [Q] (Don't Hold or clown hat!) <br> <br> InstaKill pike On/Off [;(side of P)] <br> <br> Insta Kill [R] <br> <br> Katana [,] Musket [.] <br> <br> 4 Pits [O] <br> <br> 5 Windmills [P] <br> <br> Spike + Boost [G] <br> <br> 2 Turrets [H] <br> <br> Bow+Crossbow+Musket Instakill [K] <br> <br> Get age 5 (Dont choose age 6 and 7 , 8 and 9 dont choose NOTHING) And press *K* <br> <br> 4 Pikes [L] <br> <br> 4 Turrets [J] <br> <br> 1 Pike [V] 1 Pit [F] <br> <br> Sword + Katana instakill [B] <br> <br> 1 Windmill [N] <br> <br> Unequip hat *Shift* <br> <br> Unequip Acc *<*  <br> <br> [U] For age 1 InstaKill <br> <br> AutoChoose [Polearm+Musket = (F10)][Katana+Musket = (F7)][Great.Axe+Musket = (F8)][Stick+Hammer = (F2)] <br> <br> Combos = [Z - Shadow Wings + Tank Gear] [ X - Blood Wings + Bull Helmet] [C - Angel Wings + Medic Gear] [M - Monkey Tail + Booster/Flipper/Snow ] <br> <br>  ______________________ <br> <br>  ALL features by Jack LaL. </div></div>`);
+$("#mapDisplay").css({background: `url('https://i.imgur.com/fgFsQJp.png')`});
+$("#menuHeader").html(`<div class="menuHeader">Configuration</div>`)
+document.getElementById("moomooio_728x90_home").style.display = "none";
+$("#moomooio_728x90_home").parent().css({display: "none"});
+document.getElementById("linksContainer2").innerHTML = `<a href="https://www.youtube.com/channel/UCrZVnif0yPniQfdwvdMgf_Q" target="_blank" class="menuLink">YouTube</a> | <a href="https://discord.gg/GwzdWQy" target="_blank" class="menuLink"> Discord </a> | <a href="https://greasyfork.org/en/scripts/396859-moojax-bots-autoattack-featured-hacker" target="_blank" class="menuLink"> Little Bots </a> `
+//Edit end
+window.onbeforeunload = null;
+
+let mouseX;
+let mouseY;
+
+let width;
+let height;
+
+setInterval(() => {
+   if(clanToggle == 1) {
+        doNewSend(["9", [null]]);
+        doNewSend(["8", [animate(false, 5)]])
+    }
+    doNewSend(["testing", [6]]);
+}, 200);
+
+setInterval(() => {
+    if(messageToggle == 1) {
+        doNewSend(["ch", [animate(true, 5)]])
+    }
+}, 200);
+
+setInterval(() => {
+    if(autoaim == true) {
+        doNewSend(["2", [nearestEnemyAngle]]);
+    }
+}, 0);
+
+setInterval(() => {
+    if(hatToggle == 1) {
+        if(oldHat != normalHat) {
+            hat(normalHat);
+            console.log("Tried. - Hat")
+        }
+        if(oldAcc != normalAcc) {
+            acc(normalAcc);
+            console.log("Tried. - Acc")
+        }
+        oldHat = normalHat;
+        oldAcc = normalAcc
+    }
+}, 25);
+
+function normal() {
+    hat(normalHat);
+    acc(normalAcc);
+}
+
+function aim(x, y){
+     var cvs = document.getElementById("gameCanvas");
+     cvs.dispatchEvent(new MouseEvent("mousemove", {
+         clientX: x,
+         clientY: y
+
+     }));
+}
+
+let coreURL = new URL(window.location.href);
+window.sessionStorage.force = coreURL.searchParams.get("fc");
+
+var nearestEnemy;
+var nearestEnemyAngle;
+var isEnemyNear;
+var instaSpeed = 230;
+var primary;
+var instapike = false;
+var secondary;
+var foodType;
+var wallType;
+var spikeType;
+var millType;
+var mineType;
+var boostType;
+var turretType;
+var spawnpadType;
+var autoaim = false;
+var tick = 1;
+var oldHat;
+var oldAcc;
+var enemiesNear;
+var normalHat;
+var normalAcc;
+var ws;
+var msgpack5 = msgpack;
+var boostDir;
+let myPlayer = {
+    id: null,
+    x: null,
+    y: null,
+    dir: null,
+    object: null,
+    weapon: null,
+    clan: null,
+    isLeader: null,
+    hat: null,
+    accessory: null,
+    isSkull: null
+};
+
+let healSpeed = 100;
+var messageToggle = 0;
+var clanToggle = 0;
+let healToggle = 1;
+let hatToggle = 1;
+
+document.msgpack = msgpack;
+function n(){
+     this.buffer = new Uint8Array([0]);
+     this.buffer.__proto__ = new Uint8Array;
+     this.type = 0;
+}
+
+WebSocket.prototype.oldSend = WebSocket.prototype.send;
+WebSocket.prototype.send = function(m){
+    if (!ws){
+        document.ws = this;
+
+        ws = this;
+        socketFound(this);
+    }
+    this.oldSend(m);
+};
+
+
+function socketFound(socket){
+    socket.addEventListener('message', function(message){
+        handleMessage(message);
+    });
+}
+
+function handleMessage(m){
+    let temp = msgpack5.decode(new Uint8Array(m.data));
+    let data;
+    if(temp.length > 1) {
+        data = [temp[0], ...temp[1]];
+        if (data[1] instanceof Array){
+            data = data;
+        }
+    } else {
+      data = temp;
+    }
+    let item = data[0];
+    if(!data) {return};
+
+    if(item === "io-init") {
+            let cvs = document.getElementById("gameCanvas");
+            width = cvs.clientWidth;
+            height = cvs.clientHeight;
+            $(window).resize(function() {
+                width = cvs.clientWidth;
+                height = cvs.clientHeight;
+            });
+            cvs.addEventListener("mousemove", e => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+        }
+
+    if (item == "1" && myPlayer.id == null){
+        myPlayer.id = data[1];
+    }
+
+    if (item == "33") {
+        enemiesNear = [];
+        for(let i = 0; i < data[1].length / 13; i++) {
+            let playerInfo = data[1].slice(13*i, 13*i+13);
+            if(playerInfo[0] == myPlayer.id) {
+                myPlayer.x = playerInfo[1];
+                myPlayer.y = playerInfo[2];
+                myPlayer.dir = playerInfo[3];
+                myPlayer.object = playerInfo[4];
+                myPlayer.weapon = playerInfo[5];
+                myPlayer.clan = playerInfo[7];
+                myPlayer.isLeader = playerInfo[8];
+                myPlayer.hat = playerInfo[9];
+                myPlayer.accessory = playerInfo[10];
+                myPlayer.isSkull = playerInfo[11];
+            } else if(playerInfo[7] != myPlayer.clan || playerInfo[7] === null) {
+                enemiesNear.push(playerInfo);
+            }
+        }
+    }
+
+    isEnemyNear = false;
+    if(enemiesNear) {
+        nearestEnemy = enemiesNear.sort((a,b) => dist(a, myPlayer) - dist(b, myPlayer))[0];
+    }
+    if(nearestEnemy) {
+        nearestEnemyAngle = Math.atan2(nearestEnemy[2]-myPlayer.y, nearestEnemy[1]-myPlayer.x);
+        if(Math.sqrt(Math.pow((myPlayer.y-nearestEnemy[2]), 2) + Math.pow((myPlayer.x-nearestEnemy[1]), 2)) < 300) {
+            isEnemyNear = true;
+            if(autoaim == false && myPlayer.hat != 7 && myPlayer.hat != 53) {
+                normalHat = 6;
+                if(primary != 8) {
+                    normalAcc = 21;
+                }
+            };
+        }
+    }
+    if(isEnemyNear == false && autoaim == false) {
+        normalAcc = 11;
+        if (myPlayer.y < 2400){
+            normalHat = 15;
+        } else if (myPlayer.y > 6850 && myPlayer.y < 7550){
+            normalHat = 31;
+        } else {
+	        normalHat = 12;
+        }
+    }
+    if (!nearestEnemy) {
+        nearestEnemyAngle = myPlayer.dir;
+    }
+    if(item == "h" && data[1] == myPlayer.id) {
+        if(data[2] < 100 && data[2] > 0 && healToggle == 1) {
+            setTimeout( () => {
+                placeF(foodType, null);
+            }, healSpeed);
+
+        }
+    }
+    update();
+}
+
+
+function doNewSend(sender){
+    ws.send(new Uint8Array(Array.from(msgpack5.encode(sender))));
+}
+
+function acc(id) {
+    doNewSend(["13c", [0, 0, 1]]);
+    doNewSend(["13c", [0, id, 1]]);
+}
+
+function hat(id) {
+    doNewSend(["13c", [0, id, 0]]);
+}
+
+function placeF(id, angle = Math.atan2(mouseY - height / 2, mouseX - width / 2)) {
+    doNewSend(["5", [id, null]]);
+    doNewSend(["c", [1, angle]]);
+    doNewSend(["c", [0, angle]]);
+    doNewSend(["5", [id, null]]);
+    doNewSend(["c", [1, angle]]);
+    doNewSend(["c", [0, angle]]);
+    doNewSend(["5", [myPlayer.weapon, true]]);
+}
+
+function place(id, angle = Math.atan2(mouseY - height / 2, mouseX - width / 2)) {
+    doNewSend(["5", [id, null]]);
+    doNewSend(["c", [1, angle]]);
+    doNewSend(["c", [0, angle]]);
+    doNewSend(["5", [myPlayer.weapon, true]]);
+}
+
+function boostSpike() {
+    if(boostDir == null) {
+        boostDir = nearestEnemyAngle;
+    }
+    place(spikeType, boostDir + toRad(90));
+    place(spikeType, boostDir - toRad(90));
+    place(boostType, boostDir);
+    doNewSend(["33", [boostDir]]);
+}
+var repeater = function(key, action, interval) {
+    let _isKeyDown = false;
+    let _intervalId = undefined;
+
+    return {
+        start(keycode) {
+            if(keycode == key && document.activeElement.id.toLowerCase() !== 'chatbox') {
+                _isKeyDown = true;
+                if(_intervalId === undefined) {
+                    _intervalId = setInterval(() => {
+                        action();
+                        if(!_isKeyDown){
+                            clearInterval(_intervalId);
+                            _intervalId = undefined;
+                            console.log("claered");
+                        }
+                    }, interval);
+                }
+            }
+        },
+
+        stop(keycode) {
+            if(keycode == key && document.activeElement.id.toLowerCase() !== 'chatbox') {
+                _isKeyDown = false;
+            }
+        }
+    };
+
+
+}
+
+const healer = repeater(81, () => {place(foodType)}, 0);
+const boostPlacer = repeater(70, () => {place(boostType)}, 0);
+const spikePlacer = repeater(86, () => {place(spikeType)}, 0);
+const millPlacer = repeater(78, () => {place(millType)}, 0);
+const turretPlacer = repeater(72, () => {place(turretType)}, 0);
+const boostSpiker = repeater(71, boostSpike, 0);
+
+document.addEventListener('keydown', (e)=>{
+    spikePlacer.start(e.keyCode);
+    healer.start(e.keyCode);
+    boostPlacer.start(e.keyCode);
+    boostSpiker.start(e.keyCode);
+    millPlacer.start(e.keyCode);
+    turretPlacer.start(e.keyCode);
+
+    if (e.keyCode == 80 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        for (let i=0;i<5;i++){
+             let angle = myPlayer.dir + toRad(i * 72);
+             place(millType, angle)
+        }
+    }
+    if (e.keyCode == 79 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        for (let i=0;i<4;i++){
+             let angle = myPlayer.dir + toRad(i * 90);
+             place(boostType, angle)
+        }
+    }
+    if (e.keyCode == 75 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        doNewSend(["6", [9,]]);
+        doNewSend(["5", [9, true]]);
+        doNewSend(["c", [1]]);
+        doNewSend(["6", [33]]);
+        setTimeout( () => {
+        doNewSend(["6", [12]]);
+        doNewSend(["5", [12, true]]);
+        }, 500);
+        setTimeout( () => {
+        doNewSend(["6", [15]]);
+        doNewSend(["5", [15, true]]);
+        }, 500);
+    }
+    var HAT = document.getElementById("HAT1").value;
+    var ACC = document.getElementById("ACC1").value;
+    if (e.keyCode == 37 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        doNewSend(["13c", [0, HAT, 0]]);
+        doNewSend(["13c", [0, ACC, 1]]);
+    }
+    var HET = document.getElementById("HET1").value;
+    var AEC = document.getElementById("AEC1").value;
+    if (e.keyCode == 39 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        doNewSend(["13c", [0, HET, 0]]);
+        doNewSend(["13c", [0, AEC, 1]]);
+    }
+    if (e.keyCode == 226 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        doNewSend(["13c", [0, 0, 1]]);
+    }
+    if (e.keyCode == 76 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        for (let i=0;i<4;i++){
+             let angle = myPlayer.dir + toRad(i * 90);
+             place(spikeType, angle)
+        }
+    }
+    if (e.keyCode == 74 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        for (let i=0;i<4;i++){
+             let angle = myPlayer.dir + toRad(i * 90);
+             place(turretType, angle)
+        }
+    }
+    if (e.keyCode == 72 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        place(turretType, myPlayer.dir + toRad(45));
+        place(turretType, myPlayer.dir - toRad(45));
+    }
+
+    if (e.keyCode == 77 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        if (myPlayer.y < 2400){
+            hat(15);
+        } else if (myPlayer.y > 6850 && myPlayer.y < 7550){
+            hat(31);
+        } else {
+	        hat(12);
+        }
+        acc(11);
+    }
+    if (e.keyCode == 90 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+    hat(40);
+        acc(19);
+    }
+    if (e.keyCode == 32 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+    hat(7);
+        acc(18);
+    }
+    if (e.keyCode == 67 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+    hat(13);
+        acc(13);
+    }
+    if(e.keyCode == 82 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        autoaim = true;
+        doNewSend(["5", [primary, true]]);
+        doNewSend(["13c", [0, 7, 0]]);
+        doNewSend(["13c", [0, 0, 1]]);
+        doNewSend(["13c", [0, 18, 1]]);
+        doNewSend(["c", [1]]);
+        setTimeout( () => {
+                    doNewSend(["13c", [0, 53, 0]]);
+                    doNewSend(["13c", [0, 0, 1]]);
+                    doNewSend(["13c", [0, 21, 1]]);
+                    doNewSend(["5", [secondary, true]]);
+        }, instaSpeed - 200);
+
+        setTimeout( () => {
+            doNewSend(["5", [primary, true]]);
+            doNewSend(["c", [0, null]]);
+                    doNewSend(["13c", [0, 6, 0]]);
+                    doNewSend(["13c", [0, 0, 1]]);
+                    doNewSend(["13c", [0, 21, 1]]);
+             if (instapike == true) {
+             doNewSend(["5", [spikeType]]);
+             doNewSend(["c", [1]]);
+             doNewSend(["c", [0]]);
+                 autoaim = false;
+             } else {
+            doNewSend(["c", [1]]);
+            doNewSend(["c", [0]]);
+            autoaim = false;
+             }
+        }, instaSpeed);
+    }
+
+
+    if(e.keyCode == 38 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        messageToggle = (messageToggle + 1) % 2;
+    }
+
+    if(e.keyCode == 40 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        clanToggle = (clanToggle + 1) % 2;
+    }
+    if(e.keyCode == 186 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        if (instapike == false) {
+            instapike = true;
+        doNewSend(["ch", ["On"]]);
+        } else {
+        doNewSend(["ch", ["Off"]]);
+            instapike = false;
+    }
+    }
+    if(e.keyCode == 84 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        healToggle = (healToggle + 1) % 2;
+        if(healToggle == 0) {
+            if(hatToggle == 0) {
+                document.title = "Heal: OFF / Hat: OFF"
+            } else {
+                document.title = "Heal: OFF / Hat: ON"
+            }
+        } else {
+            if(hatToggle == 0) {
+                document.title = "Heal: ON / Hat: OFF"
+            } else {
+                document.title = "Heal: ON / Hat: ON"
+            }
+        }
+    }
+    if(e.keyCode == 188 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        doNewSend(["6", [4]]);
+    }
+
+    if(e.keyCode == 190 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        doNewSend(["6", [15]]);
+    }
+    if(e.keyCode == 189 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        doNewSend(["6", [28]]);
+        doNewSend(["6", [25]]);
+    }
+    if(e.keyCode == 113 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        doNewSend(["6", [8]]);
+        doNewSend(["6", [17]]);
+        doNewSend(["6", [31]]);
+        doNewSend(["6", [23]]);
+        doNewSend(["6", [10]]);
+        doNewSend(["6", [33]]);
+        doNewSend(["6", [28]]);
+        doNewSend(["6", [25]]);
+        doNewSend(["5", [1]]);
+        doNewSend(["c", [1]]);
+        doNewSend(["c", [0]]);
+    }
+    if(e.keyCode == 118 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+
+        doNewSend(["6", [3]]);
+        doNewSend(["6", [17]]);
+        doNewSend(["6", [31]]);
+        doNewSend(["6", [23]]);
+        doNewSend(["6", [9]]);
+        doNewSend(["6", [33]]);
+        doNewSend(["6", [4]]);
+        doNewSend(["6", [15]]);
+            }
+    if(e.keyCode == 119 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+
+        doNewSend(["6", [1]]);
+        doNewSend(["6", [17]]);
+        doNewSend(["6", [31]]);
+        doNewSend(["6", [23]]);
+        doNewSend(["6", [9]]);
+        doNewSend(["6", [33]]);
+        doNewSend(["6", [2]]);
+        doNewSend(["6", [15]]);
+    }
+    if(e.keyCode == 121 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        doNewSend(["6", [5]]);
+        doNewSend(["6", [17]]);
+        doNewSend(["6", [31]]);
+        doNewSend(["6", [23]]);
+        doNewSend(["6", [9]]);
+        doNewSend(["6", [33]]);
+        doNewSend(["6", [12]]);
+        doNewSend(["6", [15]]);
+
+    }
+    if(e.keyCode == 85 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        autoaim = true;
+        doNewSend(["13c", [0, 0, 1]]);
+        doNewSend(["13c", [0, 7, 0]]);
+        doNewSend(["c", [1]]);
+        setTimeout( () => {
+            doNewSend(["6", [5]]);
+        }, instaSpeed - 130);
+
+        setTimeout( () => {
+            doNewSend(["c", [1]]);
+            doNewSend(["13c", [0, 53, 0]]);
+            autoaim = false;
+        }, instaSpeed);
+    }
+    if(e.keyCode == 66 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        autoaim = true;
+        doNewSend(["13c", [0, 0, 1]]);
+        doNewSend(["13c", [0, 7, 0]]);
+        doNewSend(["c", [1]]);
+        setTimeout( () => {
+            doNewSend(["6", [4]]);
+        }, instaSpeed - 130);
+
+        setTimeout( () => {
+            doNewSend(["c", [1]]);
+            doNewSend(["13c", [0, 53, 0]]);
+            autoaim = false;
+        }, instaSpeed);
+}
+    if(e.keyCode == 123 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        hatToggle = (hatToggle + 1) % 2;
+        if(healToggle == 0) {
+            if(hatToggle == 0) {
+                document.title = "Heal: OFF / Hat: OFF"
+            } else {
+                document.title = "Heal: OFF / Hat: ON"
+            }
+        } else {
+            if(hatToggle == 0) {
+                document.title = "Heal: ON / Hat: OFF"
+            } else {
+                document.title = "Heal: ON / Hat: ON"
+            }
+        }
+    }
+})
+
+document.addEventListener('keyup', (e)=>{
+    spikePlacer.stop(e.keyCode);
+    boostPlacer.stop(e.keyCode);
+    boostSpiker.stop(e.keyCode);
+    millPlacer.stop(e.keyCode);
+    turretPlacer.stop(e.keyCode);
+    healer.stop(e.keyCode);
+    if(e.keyCode == 71 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        setTimeout( () => {
+            doNewSend(["33", [null]]);
+            boostDir = null;
+        }, 10);
+    }
+})
+
+
+function isElementVisible(e) {
+    return (e.offsetParent !== null);
+}
+
+
+function toRad(angle) {
+    return angle * 0.01745329251;
+}
+
+function dist(a, b){
+    return Math.sqrt( Math.pow((b.y-a[2]), 2) + Math.pow((b.x-a[1]), 2) );
+}
+
+
+document.title = "MooJaXReloaded"
+
+function update() {
+    for (let i=0;i<9;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString()))){
+            primary = i;
+        }
+    }
+
+    for (let i=9;i<16;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString()))){
+            secondary = i;
+        }
+    }
+
+    for (let i=16;i<19;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString()))){
+            foodType = i - 16;
+        }
+    }
+
+    for (let i=19;i<22;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString()))){
+            wallType = i - 16;
+        }
+    }
+
+    for (let i=22;i<26;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString()))){
+            spikeType = i - 16;
+        }
+    }
+
+    for (let i=26;i<29;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString()))){
+            millType = i - 16;
+        }
+    }
+
+    for (let i=29;i<31;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString()))){
+            mineType = i - 16;
+        }
+    }
+
+    for (let i=31;i<33;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString()))){
+            boostType = i - 16;
+        }
+    }
+
+    for (let i=33;i<39;i++){
+        if (isElementVisible(document.getElementById("actionBarItem" + i.toString())) && i != 36){
+            turretType = i - 16;
+        }
+    }
+
+    spawnpadType = 36;
+}
+
+var ID_WinterCap = 15;
+var ID_FlipperHat = 31;
+var ID_MarksmanCap = 1;
+var ID_BushGear = 10;
+var ID_SoldierHelmet = 6;
+var ID_AntiVenomGear = 23;
+var ID_MusketeerHat = 32;
+var ID_MedicGear = 13;
+var ID_BullHelmet = 7;
+var ID_EmpHelmet = 22;
+var ID_BoosterHat = 12;
+var ID_BarbarianArmor = 26;
+var ID_BullMask = 46;
+var ID_WindmillHat = 14;
+var ID_SpikeGear = 11;
+var ID_BushidoArmor = 16;
+var ID_SamuraiArmor = 20;
+var ID_ScavengerGear = 27;
+var ID_TankGear = 40;
+var ID_TurretGear = 53;
+
+// Keys
+var TankGearKey = 90;
+var BullHelmetKey = 74;
+var SoldierHelmetKey = 71;
+var TurretKey = 72;
+var BoosterHatKey = 66;
+var uneqiup = 16;
+var SpikeGearKey = 89;
+var EmpKey = 84;
+var SamuKey = 80;
+var SpikeKey = 86
+
+try {
+    document.getElementById("moomooio_728x90_home").style.display = "none";
+    $("moomooio728x90_home").parent().css({display: "none"});
+} catch (e) {
+    console.log("There was an error removing the ads.");
+}
+
+
+var menuChange = document.createElement("div");
+menuChange.className = "menuCard";
+menuChange.id = "mainSettings";
+menuChange.innerHTML = `
+<div id="simpleModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="closeBtn">&times;</span>
+            <h2 style="font-size: 17px;">Macro Settings</h2>
+        </div>
+        <div class="modal-body" style="font-size: 17px;">
+            <div class="flexControl">
+                <h3 style="color: #2196F3; font-size: 17px;">To unquip a hat press: LEFT SHIFT</h3>
+                <h3 class="menuPrompt">Tank Gear: </h3> <input value="${String.fromCharCode(TankGearKey)}" id="tankGear" class="keyPressLow" onkeyup="this.value = this.value.toUpperCase();" maxlength="1" type="text"/>
+                <h3 class="menuPrompt">Bull Helmet: </h3> <input value="${String.fromCharCode(BullHelmetKey)}" id="bullHelm" class="keyPressLow" onkeyup="this.value = this.value.toUpperCase();" maxlength="1" type="text"/>
+                <h3 class="menuPrompt">Soldier Helmet: </h3> <input value="${String.fromCharCode(SoldierHelmetKey)}" id="soldier" class="keyPressLow"onkeyup="this.value = this.value.toUpperCase();"  maxlength="1" type="text"/>
+                <h3 class="menuPrompt">Turret Gear: </h3> <input value="${String.fromCharCode(TurretKey)}" id="turret" class="keyPressLow" maxlength="1" onkeyup="this.value = this.value.toUpperCase();" type="text"/>
+                <h3 class="menuPrompt">Booster Hat: </h3> <input value="${String.fromCharCode(BoosterHatKey)}" id="booster" class="keyPressLow" maxlength="1" onkeyup="this.value = this.value.toUpperCase();" type="text"/>
+                <h3 class="menuPrompt">Spike Gear: </h3> <input value="${String.fromCharCode(SpikeGearKey)}" id="spikeg" class="keyPressLow" maxlength="1" onkeyup="this.value = this.value.toUpperCase();" type="text"/>
+                <h3 class="menuPrompt">Emp Helmet: </h3> <input value="${String.fromCharCode(EmpKey)}" id="emp" class="keyPressLow" onkeyup="this.value = this.value.toUpperCase();" maxlength="1" type="text"/>
+                <h3 class="menuPrompt">Samurai Armor: </h3> <input value="${String.fromCharCode(SamuKey)}" id="samu" class="keyPressLow" onkeyup="this.value = this.value.toUpperCase();" maxlength="1" type="text"/>
+                <hr>
+                <h3 style="font-size: 17px;"> Map Settings </h3>
+                <label class="container">Show biomes on the map ?(Snow, Plains, desert)
+                    <input type="checkbox" id="myCheck">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Put pike on the InstaKill?
+                    <input type="checkbox" id="myCheck2">
+                    <span class="checkmark"></span>
+                </label>
+               <h3 style="font-size: 17px;"> Autochat settings </h3>
+               <br>AutoChat:<input type="text" value="1" id="ach1" /><br>
+               <br><p> Set "1" to display nothing! </p><br>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <h3 style="font-size: 17px;">Edit and live save your changes !</h3>
+            <p>Sub to (JackLaL)</p>
+        </div>
+    </div>
+</div>
+`
+document.body.appendChild(menuChange)
+
+
+$("#tankGear").on("input", () => {
+    var cval = $("#tankGear").val();
+    if (cval){
+        TankGearKey = cval.toUpperCase();
+        TankGearKey = TankGearKey.charCodeAt(0);
+        console.log(TankGearKey);
+    }
+});
+
+$("#bullHelm").on("input", () => {
+    var cval = $("#bullHelm").val();
+    if (cval){
+        BullHelmetKey = cval.toUpperCase();
+        BullHelmetKey = BullHelmetKey.charCodeAt(0);
+        console.log(BullHelmetKey);
+    }
+});
+
+$("#soldier").on("input", () => {
+    var cval = $("#soldier").val();
+    if (cval){
+        SoldierHelmetKey = cval.toUpperCase();
+        SoldierHelmetKey = SoldierHelmetKey.charCodeAt(0);
+        console.log(SoldierHelmetKey);
+    }
+});
+
+$("#turret").on("input", () => {
+    var cval = $("#turret").val();
+    if (cval){
+        TurretKey = cval.toUpperCase();
+        TurretKey = TurretKey.charCodeAt(0);
+        console.log(TurretKey);
+    }
+});
+
+
+
+$("#emp").on("input", () => {
+    var cval = $("#emp").val();
+    if (cval){
+        EmpKey = cval.toUpperCase();
+        EmpKey = EmpKey.charCodeAt(0);
+        console.log(EmpKey);
+    }
+});
+
+$("#samu").on("input", () => {
+    var cval = $("#samu").val();
+    if (cval){
+        SamuKey = cval.toUpperCase();
+        SamuKey = SamuKey.charCodeAt(0);
+        console.log(SamuKey);
+    }
+});
+
+$("#booster").on("input", () => {
+    var cval = $("#booster").val();
+    if (cval){
+        BoosterHatKey = cval.toUpperCase();
+        BoosterHatKey = BoosterHatKey.charCodeAt(0);
+        console.log(BoosterHatKey);
+    }
+});
+
+$("#spikeg").on("input", () => {
+    var cval = $("#spikeg").val();
+    if (cval){
+        SpikeGearKey = cval.toUpperCase();
+        SpikeGearKey = SpikeGearKey.charCodeAt(0);
+        console.log(SpikeGearKey);
+    }
+});
+
+$("#trap").on("input", () => {
+    var cval = $("#trap").val();
+    if (cval){
+        TrapKey = cval.toUpperCase();
+        TrapKey = TrapKey.charCodeAt(0);
+        console.log(TrapKey);
+    }
+});
+
+var styleItem = document.createElement("style");
+styleItem.type = "text/css";
+styleItem.appendChild(document.createTextNode(`
+.keyPressLow {
+    margin-left: 8px;
+    font-size: 16px;
+    margin-right: 8px;
+    height: 25px;
+    width: 50px;
+    background-color: #fcfcfc;
+    border-radius: 3.5px;
+    border: none;
+    text-align: center;
+    color: #4A4A4A;
+    border: 0.5px solid #f2f2f2;
+}
+
+.menuPrompt {
+    font-size: 17px;
+    font-family: 'Hammersmith One';
+    color: #4A4A4A;
+    flex: 0.2;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-content {
+    margin: 10% auto;
+    width: 40%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+    background: #cf2727;
+    padding: 15px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-body {
+    padding: 10px 20px;
+    background: #fff;
+}
+
+.modal-footer {
+    background: #cf2727;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.closeBtn {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    color: #fff;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a red background */
+.container input:checked ~ .checkmark {
+  background-color: #cf2727;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+`))
+document.head.appendChild(styleItem);
+
+
+$("#adCard").css({display: "none"});
+
+
+document.addEventListener('keydown', function(e) {
+    if (e.keyCode == uneqiup && document.activeElement.id.toLowerCase() !== 'chatbox'){
+        console.log("done")
+        storeEquip(0);
+    } else if (e.keyCode == 27){
+        if (modal.style.display = "none") {
+            modal.style.display = "block";
+        } else {
+            modal.style.display = "none";
+        }
+    } else if (e.keyCode == TankGearKey && document.activeElement.id.toLowerCase() !== 'chatbox'){
+        storeEquip(ID_TankGear);
+    } else if (e.keyCode == SoldierHelmetKey && document.activeElement.id.toLowerCase() !== 'chatbox'){
+        storeEquip(ID_SoldierHelmet);
+    } else if (e.keyCode == BullHelmetKey && document.activeElement.id.toLowerCase() !== 'chatbox'){
+        storeEquip(ID_BullHelmet);
+    } else if (e.keyCode == BoosterHatKey && document.activeElement.id.toLowerCase() !== 'chatbox'){
+        storeEquip(ID_BoosterHat);
+    } else if (e.keyCode == EmpKey && document.activeElement.id.toLowerCase() !== 'chatbox'){
+        storeEquip(ID_EmpHelmet);
+            } else if (e.keyCode == SamuKey && document.activeElement.id.toLowerCase() !== 'chatbox'){
+        storeEquip(ID_SamuraiArmor);
+    } else if (e.keyCode == SpikeGearKey && document.activeElement.id.toLowerCase() !== 'chatbox'){
+        storeEquip(ID_SpikeGear);
+    } else if (e.keyCode == TurretKey && document.activeElement.id.toLowerCase() !== 'chatbox'){
+        storeEquip(ID_TurretGear);
+    }
+})
+
+// Get modal element
+var modal = document.getElementById("simpleModal");
+// Get close button
+var closeBtn = document.getElementsByClassName('closeBtn')[0];
+
+// Events
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+
+var checkbox = document.querySelector("#myCheck")
+
+checkbox.addEventListener('change', function() {
+    if (this.checked) {
+        $("#mapDisplay").css({background: `url('https://i.imgur.com/fgFsQJp.png')`});
+        console.log('checked')
+    } else {
+        $("#mapDisplay").css({background: `rgba(0, 0, 0, 0.25)`})
+        console.log('unchecked')
+    }
+})
+var checkbox2 = document.querySelector("#myCheck2")
+
+checkbox2.addEventListener('change', function() {
+    if (this.checked) {
+        instapike = true;
+    } else {
+        instapike = false;
+    }
+})
+
+document.addEventListener('keyup', (e)=>{
+    spikePlacer.stop(e.keyCode);
+    boostPlacer.stop(e.keyCode);
+    millPlacer.stop(e.keyCode);
+    turretPlacer.stop(e.keyCode);
+    healer.stop(e.keyCode);
+    if(e.keyCode == 71 && document.activeElement.id.toLowerCase() !== 'chatbox') {
+        setTimeout( () => {
+            doNewSend(["33", [null]]);
+            boostDir = null;
+        }, 10);
+    }
+})
+
+
+function isElementVisible(e) {
+    return (e.offsetParent !== null);
+}
+
+
+function toRad(angle) {
+    return angle * 0.01745329251;
+}
+
+function dist(a, b){
+    return Math.sqrt( Math.pow((b.y-a[2]), 2) + Math.pow((b.x-a[1]), 2) );
+}
+
+
+function animate(space, chance) {
+    let result = '';
+    let characters;
+    if(space) {
+        characters = "Noobs run HaHa";
+    } else {
+        characters = 'Moo_Jax';
+    }
+    if(space) {
+        characters = characters.padStart((30 - characters.length) / 2 + characters.length)
+        characters = characters.padEnd(30);
+    }
+    let count = 0;
+    for (let i = 0; i < characters.length; i++ ) {
+       if(Math.floor(Math.random() * chance) == 1 && characters.charAt(i) != " " && count < 2 && characters.charAt(i) != " ") {
+           result += " ";
+           count++
+       } else {
+           result += characters.charAt(i);
+       }
+    }
+    return result;
+}
+var lel = false;
+function nothig() {
+    var lel = false;
+    console.log("fOlS");
+}
+setInterval(() => {
+    var ach = document.getElementById("ach1").value;
+    if(ach == 1) {
+        nothig();
+    } else {
+        doNewSend(["ch", [ach]]);
+    }
+}, 1000);
