@@ -7,7 +7,6 @@
 <p>5.Click save file! </p>
 <p>6. Play and Win! </p>
 <p>_________________</p>
-<u><h3><a href="https://greasyfork.org/en/scripts/397005-moojax-2-4-autoheal-x5-instakill-discord-game-cursor-best-hotkeys">Click here!</a></u><p>to direct install </p></h3>
-
+<u><h3><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=4249b129-2276-4ce1-976c-050c2e473473">Click here!</a></u><p>to direct install </p></h3>
 <a href ="https://www.youtube.com/channel/UCrZVnif0yPniQfdwvdMgf_Q">
 <IMG SRC="https://i.imgur.com/AxSIOJE.jpg"></a> </img>
