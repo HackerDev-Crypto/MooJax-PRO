@@ -1,4 +1,5 @@
 // ==UserScript==
+(/ LOL!
 // @name MooJax 2.4 || AutoHeal[X5]&Instakill! | !Discord! | Game Cursor! | Best HotKeys! |  ★
 // @version    2.4
 // @description MooJax Modify menu![❚Macro = Z-Tank Gear + Shadow Wings Space Bar-Blood Wings + Bull Helmet C-Medic Gear + Angel Wings M- Velocity Esc-Modify❚] [❚Featured Hacker❚] [❚Musket + Katana = *,* Katana & *.* Musket❚] [❚Instakill Key = R❚] [❚Bow+Rep.+Musk. Key = K ❚] [❚AutoHeal = More Fast❚] [❚Little more hard to get Clown❚] [❚InstaKill Pike = On/Off❚] [❚KeyCodes = V - Pike F - Pit N - Windmill❚] [❚KeyCodesCircle = L-Spike O-Pit P-Windmill J-Turret❚] [❚★Premium MAP★❚] [❚AutoChat & AutoClan❚] !Discord!
