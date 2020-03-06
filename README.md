@@ -4,3 +4,6 @@
 <p>2.Open file! </p>
 <p>3.Copy all! </p>
 <p>4.Paste on tampermonkey </p>
+<p>5.Click save file! </p>
+<p>6. Play and Win! </p>
+<p>_________________</p>
