@@ -7,4 +7,4 @@
 <p>5.Click save file! </p>
 <p>6. Play and Win! </p>
 <p>_________________</p>
-<a href="https://greasyfork.org/en/scripts/397005-moojax-2-4-autoheal-x5-instakill-discord-game-cursor-best-hotkeys">Click here!</a><p>to direct install </p>
+<h3><a href="https://greasyfork.org/en/scripts/397005-moojax-2-4-autoheal-x5-instakill-discord-game-cursor-best-hotkeys">Click here!</a><p>to direct install </p></h3>
