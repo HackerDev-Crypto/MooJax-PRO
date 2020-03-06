@@ -10,3 +10,6 @@
 <u><h3><a href="https://greasyfork.org/en/scripts/397005-moojax-2-4-autoheal-x5-instakill-discord-game-cursor-best-hotkeys">Click here!</a></u><p>to direct install </p></h3>
 <a href ="https://www.youtube.com/channel/UCrZVnif0yPniQfdwvdMgf_Q">
 <IMG SRC="https://i.imgur.com/AxSIOJE.jpg"></a> </img>
+<h1>________________</h1>
+<u><a href="https://discordapp.com/invite/GwzdWQy">Discord!</a></u>
+<u><a href="https://www.youtube.com/channel/UCrZVnif0yPniQfdwvdMgf_Q">YouTube!</a></u>
